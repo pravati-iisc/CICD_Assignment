@@ -2,7 +2,7 @@ name: Train_Test
 
 on:
   pull_request:
-    branches: ['main']
+    branches: ['main_dev_branch']
 
 jobs:
   Train:
