@@ -27,7 +27,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: pravati-iisc/mlops:ci_cd_a3
+          tags: /pravati-iisc
 
   Test:
     needs: Train
@@ -35,11 +35,11 @@ jobs:
     if: ${{ needs.Train.result == 'success' }}
     steps:
       - name: Pull Docker image
-        run: docker pull pravati-iisc/mlops:ci_cd_a3
+        run: docker pull /pravati-iisc
 
       - name: Run Docker container and test
         run: |
-          OUTPUT=$(docker run pravati-iisc/mlops:ci_cd_a3)
+          OUTPUT=$(docker run /pravati-iisc)
           echo "Score:"
           echo "$OUTPUT"
           if [[ `echo "$OUTPUT 0.35" | awk '{print ($1 < $2)}'` == 1 ]]; then echo "Insufficient Accuracy" && exit 1; fi
