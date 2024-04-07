@@ -43,4 +43,4 @@ jobs:
           echo "Score:"
           echo "$OUTPUT"
           if [[ `echo "$OUTPUT 0.35" | awk '{print ($1 < $2)}'` == 1 ]]; then echo "Insufficient Accuracy" && exit 1; fi
-          echo "successfull executed!"
+          echo "successfully executed!"
