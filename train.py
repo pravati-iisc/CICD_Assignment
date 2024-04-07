@@ -7,6 +7,7 @@ import numpy as np
 df = pd.read_csv("data/train.csv")
 X = df.drop(columns=['Disease']).to_numpy()
 y = df['Disease'].to_numpy()
+#added lebels 
 labels = np.array(['Anemia', 'Diabetes', 'Healthy', 'Heart Di', 'Thalasse', 'Thromboc'])
 y = np.array([np.where(labels == x) for x in y]).flatten()
  
