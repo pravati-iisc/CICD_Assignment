@@ -15,5 +15,5 @@ try:
     with open("model.pkl", 'wb') as f:
         pickle.dump(mod, f)
 except Exception as e:
-    print('\n\n## Creating Manual error for forcing it to fail. ##\n\n')
+    print('\n\n## Createing Manual error for forcing it to fail. ##\n\n')
     raise
